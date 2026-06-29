@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Cambridge 21 – Test 1 Reading Giải Thích</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+  :root {
+    --bg: #f7f5f0;
+    --card: #ffffff;
+    --ink: #1a1612;
+    --muted: #6b6560;
+    --accent: #c0592e;
+    --accent-soft: #f5e8e3;
+    --green: #2e6b44;
+    --green-soft: #e3f0ea;
+    --blue: #1f4e79;
+    --blue-soft: #e3edf7;
+    --yellow-soft: #fef9e7;
+    --border: #e8e3dc;
+    --true: #2e6b44;
+    --false: #c0391b;
+    --notgiven: #8a6c1b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 40px 32px 32px;
+    border-bottom: 4px solid var(--accent);
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  header p { margin-top: 8px; color: #b8b0a5; font-size: 0.9rem; }
+
+  nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    padding: 0 32px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 14px 12px;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    transition: color .2s, border-color .2s;
+  }
+  nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  main { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+  section { margin-bottom: 64px; }
+
+  .passage-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent);
+  }
+  .passage-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); }
+  .passage-title { font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--ink); }
+
+  .summary-box {
+    background: var(--accent-soft);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    font-size: 0.9rem;
+    color: #5a2a15;
+  }
+  .summary-box strong { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+  .q-block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 20px;
+  }
+  .q-block:hover { border-color: #c8c0b8; }
+
+  .q-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 12px; }
+  .q-num {
+    min-width: 36px; height: 36px;
+    background: var(--ink); color: #fff;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .q-text { font-size: 0.95rem; color: var(--muted); flex: 1; }
+
+  .answer-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+  .ans-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 700; font-size: 0.82rem;
+    padding: 5px 12px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .ans-badge.word    { background: var(--blue-soft); color: var(--blue); }
+  .ans-badge.true    { background: var(--green-soft); color: var(--true); }
+  .ans-badge.false   { background: #fde8e8; color: var(--false); }
+  .ans-badge.notgiven{ background: var(--yellow-soft); color: var(--notgiven); }
+  .ans-badge.letter  { background: #f0ebf8; color: #5b21b6; }
+  .ans-badge.yn-yes  { background: var(--green-soft); color: var(--true); }
+  .ans-badge.yn-no   { background: #fde8e8; color: var(--false); }
+
+  /* ── EVIDENCE BOX (replaces location-note) ── */
+  .evidence-box {
+    background: #f9f7f4;
+    border: 1px solid var(--border);
+    border-left: 4px solid #a0856a;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+  .evidence-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #a0856a;
+    margin-bottom: 6px;
+  }
+  .evidence-en {
+    color: var(--ink);
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .evidence-vi {
+    color: #5a4a38;
+    margin-top: 5px;
+    font-style: normal;
+    line-height: 1.6;
+    padding-top: 5px;
+    border-top: 1px dashed #d9d0c4;
+  }
+  .evidence-vi::before { content: "🇻🇳 "; font-style: normal; }
+  .evidence-note {
+    margin-top: 6px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: normal;
+  }
+
+  .vocab-section { margin-top: 12px; }
+  .vocab-section h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 8px; }
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px; }
+  .vocab-card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; }
+  .vocab-word { font-weight: 600; color: var(--ink); font-size: 0.88rem; }
+  .vocab-meaning { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+  .vocab-vi { font-size: 0.78rem; color: var(--accent); font-style: italic; }
+
+  .paraphrase-box {
+    background: var(--blue-soft);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+  .paraphrase-box strong { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.07em; color: var(--blue); display: block; margin-bottom: 4px; }
+  .phr-row { display: flex; gap: 8px; align-items: flex-start; margin-top: 4px; flex-wrap: wrap; }
+  .phr-original { color: var(--muted); }
+  .phr-arrow { color: var(--blue); font-weight: 700; flex-shrink: 0; }
+  .phr-para { color: var(--blue); font-weight: 600; }
+
+  .q-type-label {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em;
+    font-weight: 700; color: var(--muted);
+    margin: 32px 0 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--border);
+  }
+
+  .options-box {
+    background: var(--bg); border-radius: 6px;
+    padding: 10px 14px; margin: 8px 0; font-size: 0.83rem;
+  }
+
+  .score-note {
+    background: var(--ink); color: #fff;
+    border-radius: 12px; padding: 20px 24px;
+    font-size: 0.85rem; margin-top: 40px;
+  }
+  .score-note h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 10px; color: #e8c9b8; }
+  .score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px; }
+  .score-cell { text-align: center; background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 8px; }
+  .score-cell .range { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+  .score-cell .label { font-size: 0.72rem; color: #b8b0a5; margin-top: 4px; }
+
+  @media (max-width: 600px) {
+    header { padding: 28px 20px; }
+    main { padding: 24px 16px 60px; }
+    .q-block { padding: 16px; }
+    .score-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>IELTS Cambridge 21 · Test 1 Reading</h1>
+  <p>Giải thích đáp án · Câu bằng chứng có dịch tiếng Việt · Từ vựng trọng tâm · Paraphrase · 3 Passages · 40 Questions</p>
+</header>
+
+<nav>
+  <a href="#passage1" class="active">Passage 1 – The Davies Sisters</a>
+  <a href="#passage2">Passage 2 – Why We Need Silence</a>
+  <a href="#passage3">Passage 3 – The World of Sugar</a>
+</nav>
+
+<main>
+
+<!-- ════════════════════════════════════════
+     PASSAGE 1
+════════════════════════════════════════ -->
+<section id="passage1">
+  <div class="passage-header">
+    <span class="passage-label">Passage 1 · Q1–13</span>
+    <span class="passage-title">The Davies Sisters</span>
+  </div>
+  <div class="summary-box">
+    <strong>Chủ đề:</strong> Hai chị em Gwendoline và Margaret Davies (xứ Wales) thừa kế tài sản từ ông nội, dùng tiền để xây dựng bộ sưu tập tranh Ấn tượng Pháp lớn nhất nước Anh trong giai đoạn 1908–1924.
+  </div>
+
+  <div class="q-type-label">Questions 1–7 · Note Completion (ONE WORD ONLY)</div>
+
+  <!-- Q1 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">1</div><div class="q-text">their grandfather's wealth came from .......... and transportation businesses</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ mining</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 1 – Bằng chứng</div>
+      <div class="evidence-en">"David Davies, a Welshman who amassed a fortune in the shipping and mining industries."</div>
+      <div class="evidence-vi">"David Davies, một người xứ Wales đã tích lũy được khối tài sản lớn trong ngành vận tải biển và khai thác mỏ."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">amass a fortune</div><div class="vocab-meaning">accumulate a large amount of wealth</div><div class="vocab-vi">tích lũy tài sản lớn</div></div>
+        <div class="vocab-card"><div class="vocab-word">mining</div><div class="vocab-meaning">extracting minerals from the earth</div><div class="vocab-vi">ngành khai thác mỏ</div></div>
+        <div class="vocab-card"><div class="vocab-word">shipping</div><div class="vocab-meaning">transporting goods by sea</div><div class="vocab-vi">vận tải đường biển</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">transportation (đề)</span><span class="phr-arrow">→</span><span class="phr-para">shipping (bài)</span></div>
+      <div class="phr-row"><span class="phr-original">wealth came from (đề)</span><span class="phr-arrow">→</span><span class="phr-para">amassed a fortune in (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">2</div><div class="q-text">their .......... was designed to give them an interest in activities such as collecting art</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ education</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 2 – Bằng chứng</div>
+      <div class="evidence-en">"their education was rigorously geared toward such pursuits. Their London school focused on cultural rather than academic study."</div>
+      <div class="evidence-vi">"nền giáo dục của họ được định hướng chặt chẽ để phục vụ cho những hoạt động đó. Trường học của họ ở London tập trung vào văn hóa thay vì học thuật."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">designed to give them an interest in (đề)</span><span class="phr-arrow">→</span><span class="phr-para">rigorously geared toward such pursuits (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">3</div><div class="q-text">they took lengthy .......... about the things they saw in art galleries</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ notes</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 2 – Bằng chứng</div>
+      <div class="evidence-en">"visiting art galleries and making extensive notes on the collections there."</div>
+      <div class="evidence-vi">"thăm quan các phòng trưng bày nghệ thuật và ghi chép tỉ mỉ về các bộ sưu tập ở đó."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">lengthy (đề)</span><span class="phr-arrow">→</span><span class="phr-para">extensive (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">4</div><div class="q-text">their .......... showed they liked Old Master paintings, but they were expensive to buy</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ journals</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 4 – Bằng chứng</div>
+      <div class="evidence-en">"The sisters' journals reveal their preference for Old Master paintings. Yet they initially made very few attempts to secure any such works."</div>
+      <div class="evidence-vi">"Nhật ký của hai chị em tiết lộ sở thích của họ đối với các tác phẩm của bậc thầy hội họa cổ điển. Tuy nhiên, ban đầu họ hầu như không cố gắng mua các tác phẩm như vậy."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">journal</div><div class="vocab-meaning">personal diary / written record</div><div class="vocab-vi">nhật ký cá nhân</div></div>
+        <div class="vocab-card"><div class="vocab-word">reveal</div><div class="vocab-meaning">make known / show</div><div class="vocab-vi">tiết lộ, bộc lộ</div></div>
+        <div class="vocab-card"><div class="vocab-word">preference</div><div class="vocab-meaning">greater liking for one alternative</div><div class="vocab-vi">sở thích, ưu tiên</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">showed they liked (đề)</span><span class="phr-arrow">→</span><span class="phr-para">reveal their preference for (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">5</div><div class="q-text">the first Impressionist paintings they bought showed places in ..........</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ Venice</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng</div>
+      <div class="evidence-en">"their first purchases of Impressionist art, made in October 1912, were scenes of Venice by the French artist Claude Monet."</div>
+      <div class="evidence-vi">"những tác phẩm Ấn tượng đầu tiên họ mua vào tháng 10 năm 1912 là các cảnh đẹp của Venice do họa sĩ người Pháp Claude Monet vẽ."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">Impressionist</div><div class="vocab-meaning">French painting style (late 1800s) focusing on light and colour</div><div class="vocab-vi">trường phái Ấn tượng Pháp</div></div>
+        <div class="vocab-card"><div class="vocab-word">amass (bulk of)</div><div class="vocab-meaning">gather a large quantity</div><div class="vocab-vi">tích lũy, thu gom nhiều</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">6</div><div class="q-text">they worked in a .......... for soldiers in France</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ canteen</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 6 – Bằng chứng</div>
+      <div class="evidence-en">"both sisters decided to volunteer at a canteen for troops at Troyes, in northern France."</div>
+      <div class="evidence-vi">"cả hai chị em quyết định tình nguyện làm việc tại một căng-tin phục vụ binh lính ở Troyes, miền bắc nước Pháp."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">soldiers (đề)</span><span class="phr-arrow">→</span><span class="phr-para">troops (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">7</div><div class="q-text">did not have any .......... who were artists</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ friends</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 8 – Bằng chứng</div>
+      <div class="evidence-en">"they didn't make friends with artists or gallery owners."</div>
+      <div class="evidence-vi">"họ không kết bạn với các nghệ sĩ hay chủ phòng trưng bày."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">did not have any [friends] who were artists (đề)</span><span class="phr-arrow">→</span><span class="phr-para">didn't make friends with artists (bài)</span></div>
+    </div>
+  </div>
+
+  <div class="q-type-label">Questions 8–13 · True / False / Not Given</div>
+
+  <!-- Q8 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">8</div><div class="q-text">The Davies sisters' childhood influenced the way they decided to use their wealth.</div></div>
+    <div class="answer-row"><span class="ans-badge true">✓ TRUE</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 1 – Bằng chứng</div>
+      <div class="evidence-en">"Their religious upbringing in rural Wales gave them a deep sense of social responsibility and they chose to use their inheritance for cultural and philanthropic purposes."</div>
+      <div class="evidence-vi">"Cách nuôi dưỡng theo tinh thần tôn giáo ở vùng nông thôn xứ Wales đã cho họ ý thức trách nhiệm xã hội sâu sắc, và họ chọn cách dùng tài sản thừa kế vào các mục đích văn hóa và từ thiện."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">upbringing</div><div class="vocab-meaning">the way a child is raised</div><div class="vocab-vi">cách nuôi dưỡng thuở nhỏ</div></div>
+        <div class="vocab-card"><div class="vocab-word">philanthropic</div><div class="vocab-meaning">promoting others' welfare through charity</div><div class="vocab-vi">từ thiện, lợi ích cộng đồng</div></div>
+        <div class="vocab-card"><div class="vocab-word">inheritance</div><div class="vocab-meaning">money/property received from a deceased</div><div class="vocab-vi">tài sản thừa kế</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">childhood influenced (đề)</span><span class="phr-arrow">→</span><span class="phr-para">religious upbringing gave them a deep sense (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">9</div><div class="q-text">The Jean-Baptiste-Camille Corot paintings were purchased from a gallery in France.</div></div>
+    <div class="answer-row"><span class="ans-badge notgiven">? NOT GIVEN</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 4 – Thông tin bài có</div>
+      <div class="evidence-en">"their early purchases were of the fashionable, safe variety, and included, for example, paintings by the French artist Jean-Baptiste-Camille Corot."</div>
+      <div class="evidence-vi">"những bức tranh mua sớm của họ thuộc loại thời thượng và an toàn, ví dụ như tranh của họa sĩ người Pháp Jean-Baptiste-Camille Corot."</div>
+      <div class="evidence-note">⚠️ Bài không đề cập tranh Corot được mua từ đâu — không đủ thông tin để xác định đúng hay sai.</div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">10</div><div class="q-text">Hugh Blaker opposed the Davies sisters' decision to buy art by French Impressionists.</div></div>
+    <div class="answer-row"><span class="ans-badge false">✗ FALSE</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng (mâu thuẫn)</div>
+      <div class="evidence-en">"We know that Hugh Blaker, as a champion of contemporary French art had a hand in the decision."</div>
+      <div class="evidence-vi">"Chúng ta biết rằng Hugh Blaker, với tư cách là người ủng hộ nhiệt thành nghệ thuật Pháp đương đại, đã có vai trò trong quyết định đó."</div>
+      <div class="evidence-note">⚠️ Bài nói Blaker là người <strong>ủng hộ</strong> (champion), không phải phản đối (opposed) — đây là đáp án FALSE.</div>
+    </div>
+    <div class="paraphrase-box"><strong>Bẫy paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">opposed (đề)</span><span class="phr-arrow">↔ trái nghĩa với</span><span class="phr-para">champion of / had a hand in (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">11</div><div class="q-text">The exhibition of Cezanne paintings at the Bath gallery was very popular with the public.</div></div>
+    <div class="answer-row"><span class="ans-badge notgiven">? NOT GIVEN</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 7 – Thông tin bài có</div>
+      <div class="evidence-en">"The paintings were shipped directly to Bath, England, where they became the first works by Cezanne to go on display in a public gallery in Britain."</div>
+      <div class="evidence-vi">"Những bức tranh được vận chuyển thẳng đến Bath, Anh, nơi chúng trở thành những tác phẩm đầu tiên của Cezanne được trưng bày trong phòng triển lãm công cộng tại Anh."</div>
+      <div class="evidence-note">⚠️ Bài chỉ nói đây là tác phẩm Cezanne <strong>đầu tiên</strong> được trưng bày ở Anh — <strong>không đề cập</strong> phản ứng của công chúng.</div>
+    </div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">12</div><div class="q-text">The impact of the First World War encouraged Gwendoline to reconsider her interest in collecting art.</div></div>
+    <div class="answer-row"><span class="ans-badge true">✓ TRUE</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn cuối – Bằng chứng</div>
+      <div class="evidence-en">"By the early 1920s, Gwendoline felt increasingly uncomfortable buying art works when faced with the poverty and social upheaval created by the First World War. Her philanthropic pursuits then became focused almost exclusively on social causes."</div>
+      <div class="evidence-vi">"Đến đầu những năm 1920, Gwendoline cảm thấy ngày càng khó chịu khi mua tác phẩm nghệ thuật trước cảnh nghèo đói và biến động xã hội do Thế chiến thứ nhất gây ra. Các hoạt động từ thiện của bà sau đó gần như hoàn toàn tập trung vào các vấn đề xã hội."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">social upheaval</div><div class="vocab-meaning">a major disruption to society</div><div class="vocab-vi">biến động xã hội lớn</div></div>
+        <div class="vocab-card"><div class="vocab-word">reconsider</div><div class="vocab-meaning">think again about a decision</div><div class="vocab-vi">xem xét lại</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">reconsider her interest in collecting art (đề)</span><span class="phr-arrow">→</span><span class="phr-para">felt uncomfortable buying art works / pursuits became focused on social causes (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">13</div><div class="q-text">The Davies sisters bought French Impressionist art during a period when very few people were doing so.</div></div>
+    <div class="answer-row"><span class="ans-badge true">✓ TRUE</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn cuối – Bằng chứng</div>
+      <div class="evidence-en">"The sisters collected French Impressionist paintings at a time when such art was routinely ignored by individuals and institutions alike."</div>
+      <div class="evidence-vi">"Hai chị em sưu tập tranh Ấn tượng Pháp vào thời điểm mà loại nghệ thuật này thường xuyên bị cả cá nhân lẫn các tổ chức phớt lờ."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">very few people were doing so (đề)</span><span class="phr-arrow">→</span><span class="phr-para">routinely ignored by individuals and institutions alike (bài)</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     PASSAGE 2
+════════════════════════════════════════ -->
+<section id="passage2">
+  <div class="passage-header">
+    <span class="passage-label">Passage 2 · Q14–26</span>
+    <span class="passage-title">Why We Need Silence</span>
+  </div>
+  <div class="summary-box">
+    <strong>Chủ đề:</strong> Tác hại của tiếng ồn với sức khỏe; lợi ích của sự yên tĩnh; nghiên cứu về flotation tank (bể nổi cảm giác không trọng lực); ý kiến chuyên gia về liệu pháp im lặng.
+  </div>
+
+  <div class="q-type-label">Questions 14–17 · Matching Information (Sections A–G)</div>
+
+  <!-- Q14 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">14</div><div class="q-text">examples of strategies to decrease the noise that the public are exposed to</div></div>
+    <div class="answer-row"><span class="ans-badge letter">Section C</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section C – Bằng chứng</div>
+      <div class="evidence-en">"By providing recommendations for quieter buses, reducing noise from roads and also controlling noise from aircraft, they were able to make the city quieter... Other cities have introduced noise-reducing road coatings... Washington DC's ban on petrol-powered leaf blowers... legislation has been approved to fine people who modify their vehicles to make them noisier."</div>
+      <div class="evidence-vi">"Bằng cách đề xuất xe buýt yên tĩnh hơn, giảm tiếng ồn từ đường bộ và kiểm soát tiếng ồn từ máy bay, họ đã làm cho thành phố yên tĩnh hơn... Các thành phố khác đã áp dụng lớp phủ đường giảm tiếng ồn... Washington DC cấm máy thổi lá dùng xăng... luật được thông qua để phạt những người cải tạo xe khiến xe ồn hơn."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">noise-reducing road coatings</div><div class="vocab-meaning">road surfaces that absorb sound</div><div class="vocab-vi">lớp phủ đường giảm tiếng ồn</div></div>
+        <div class="vocab-card"><div class="vocab-word">muffle</div><div class="vocab-meaning">deaden or quieten a sound</div><div class="vocab-vi">làm giảm, át tiếng ồn</div></div>
+        <div class="vocab-card"><div class="vocab-word">legislation</div><div class="vocab-meaning">laws passed by a government</div><div class="vocab-vi">luật pháp, quy định</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">strategies to decrease noise (đề)</span><span class="phr-arrow">→</span><span class="phr-para">quieter buses / noise-reducing road coatings / ban on leaf blowers / fine people (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">15</div><div class="q-text">data indicating the extent of the problem of excessive noise</div></div>
+    <div class="answer-row"><span class="ans-badge letter">Section B</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section B – Bằng chứng</div>
+      <div class="evidence-en">"The World Health Organization has recently designated excessive noise as an 'underestimated threat' to public health... people living in cities such as Mumbai, Tokyo and Buenos Aires are being exposed to far more than the recommended 40 decibels of noise at night. A report from the European Environment Agency concluded that... at least 1 in 5 people consistently exposed to levels considered harmful to health."</div>
+      <div class="evidence-vi">"Tổ chức Y tế Thế giới gần đây đã xếp tiếng ồn quá mức là một 'mối đe dọa bị đánh giá thấp' đối với sức khỏe cộng đồng... người dân ở các thành phố như Mumbai, Tokyo và Buenos Aires đang tiếp xúc với mức tiếng ồn ban đêm cao hơn nhiều so với ngưỡng 40 decibel được khuyến nghị. Một báo cáo của Cơ quan Môi trường châu Âu kết luận rằng... ít nhất 1 trong 5 người liên tục tiếp xúc với mức tiếng ồn được coi là có hại cho sức khỏe."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">underestimated threat</div><div class="vocab-meaning">danger not taken seriously enough</div><div class="vocab-vi">mối đe dọa bị đánh giá thấp</div></div>
+        <div class="vocab-card"><div class="vocab-word">consistently exposed to</div><div class="vocab-meaning">regularly subjected to</div><div class="vocab-vi">liên tục bị tiếp xúc với</div></div>
+        <div class="vocab-card"><div class="vocab-word">decibel</div><div class="vocab-meaning">unit measuring sound intensity</div><div class="vocab-vi">đơn vị đo cường độ âm thanh</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">data indicating the extent of the problem (đề)</span><span class="phr-arrow">→</span><span class="phr-para">1 in 5 people / far more than the recommended 40 decibels (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">16</div><div class="q-text">a description of physiological changes in our bodies when we hear sudden noises</div></div>
+    <div class="answer-row"><span class="ans-badge letter">Section A</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section A – Bằng chứng</div>
+      <div class="evidence-en">"our internal chemistry alters in response to them. Our blood pressure goes up, muscles tense and glands release hormones that prepare us for fight or flight."</div>
+      <div class="evidence-vi">"hóa học nội tại của chúng ta thay đổi để phản ứng với chúng. Huyết áp của chúng ta tăng lên, cơ bắp căng ra và các tuyến tiết ra các hormone chuẩn bị cho chúng ta chiến đấu hoặc bỏ chạy."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">physiological</div><div class="vocab-meaning">relating to the body's physical functions</div><div class="vocab-vi">thuộc về sinh lý cơ thể</div></div>
+        <div class="vocab-card"><div class="vocab-word">fight or flight</div><div class="vocab-meaning">instinctive response to threat</div><div class="vocab-vi">phản ứng chiến đấu hoặc bỏ chạy</div></div>
+        <div class="vocab-card"><div class="vocab-word">cardiovascular disease</div><div class="vocab-meaning">diseases of the heart and blood vessels</div><div class="vocab-vi">bệnh tim mạch</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">physiological changes (đề)</span><span class="phr-arrow">→</span><span class="phr-para">blood pressure goes up / muscles tense / glands release hormones (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">17</div><div class="q-text">evidence that a relatively quiet environment can be more beneficial than a totally silent one</div></div>
+    <div class="answer-row"><span class="ans-badge letter">Section G</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section G (Pfeifer) – Bằng chứng</div>
+      <div class="evidence-en">"he found that participants reported more relaxation and less boredom when they sat quietly in an outdoor garden compared with a completely silent room."</div>
+      <div class="evidence-vi">"ông nhận thấy những người tham gia cho biết họ thư giãn nhiều hơn và ít buồn chán hơn khi ngồi yên lặng trong một khu vườn ngoài trời so với một căn phòng hoàn toàn im lặng."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">relatively quiet more beneficial than totally silent (đề)</span><span class="phr-arrow">→</span><span class="phr-para">more relaxation in outdoor garden vs. completely silent room (bài)</span></div>
+    </div>
+  </div>
+
+  <div class="q-type-label">Questions 18–21 · Summary Completion (ONE WORD ONLY)</div>
+
+  <!-- Q18 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">18</div><div class="q-text">flotation tanks allow people to concentrate on their own .......... , which helps them relax</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ breath</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section D (Feinstein) – Bằng chứng</div>
+      <div class="evidence-en">"it is the ability to focus on the breath that helps people reach a relaxed or meditative state."</div>
+      <div class="evidence-vi">"chính khả năng tập trung vào hơi thở là điều giúp mọi người đạt được trạng thái thư giãn hoặc thiền định."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">concentrate on (đề)</span><span class="phr-arrow">→</span><span class="phr-para">focus on (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q19 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">19</div><div class="q-text">50 people were given a .......... to complete before and after using a flotation tank</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ questionnaire</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section E – Bằng chứng</div>
+      <div class="evidence-en">"Feinstein and his colleagues recruited 50 people... and had them answer a questionnaire prior to and following a flotation session."</div>
+      <div class="evidence-vi">"Feinstein và các đồng nghiệp tuyển 50 người... và yêu cầu họ trả lời một bảng câu hỏi trước và sau một buổi nổi trong bể."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">prior to / following</div><div class="vocab-meaning">before / after</div><div class="vocab-vi">trước / sau</div></div>
+        <div class="vocab-card"><div class="vocab-word">questionnaire</div><div class="vocab-meaning">a set of written questions for research</div><div class="vocab-vi">bảng câu hỏi khảo sát</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q20 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">20</div><div class="q-text">signs of relaxation and improved general ..........</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ wellbeing</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section E – Bằng chứng</div>
+      <div class="evidence-en">"Participants reported decreases in muscle tension, pain and symptoms of their conditions after a single, 1-hour float, alongside an increase in feelings of relaxation and overall wellbeing."</div>
+      <div class="evidence-vi">"Những người tham gia báo cáo sự giảm thiểu về căng cơ, đau đớn và các triệu chứng bệnh sau một buổi nổi 1 tiếng, cùng với sự gia tăng cảm giác thư giãn và sức khỏe toàn diện."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">wellbeing</div><div class="vocab-meaning">state of being comfortable, healthy and happy</div><div class="vocab-vi">sức khỏe thể chất và tinh thần</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q21 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">21</div><div class="q-text">those who had been in a tank had decreased activity in parts of the brain associated with ..........</div></div>
+    <div class="answer-row"><span class="ans-badge word">⚑ depression</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section E – Bằng chứng</div>
+      <div class="evidence-en">"Float sessions uniquely decreased activity in the default mode network (DMN), a collection of brain regions commonly linked with depression."</div>
+      <div class="evidence-vi">"Các buổi nổi trong bể làm giảm hoạt động một cách đặc biệt ở mạng lưới mặc định (DMN), một tập hợp các vùng não thường liên quan đến trầm cảm."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">default mode network (DMN)</div><div class="vocab-meaning">brain regions active during rest, linked to depression</div><div class="vocab-vi">mạng lưới mặc định của não</div></div>
+        <div class="vocab-card"><div class="vocab-word">sensory deprivation</div><div class="vocab-meaning">removal of all external stimuli</div><div class="vocab-vi">tước đoạt kích thích giác quan</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">associated with depression (đề)</span><span class="phr-arrow">→</span><span class="phr-para">commonly linked with depression (bài)</span></div>
+    </div>
+  </div>
+
+  <div class="q-type-label">Questions 22–26 · Matching Statements to People (A–D)</div>
+  <div style="background:var(--bg);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.83rem;color:var(--muted);">
+    <strong>A</strong> Nick Antonio &nbsp;|&nbsp; <strong>B</strong> Justin Feinstein &nbsp;|&nbsp; <strong>C</strong> Tai Dotan Ben-Soussan &nbsp;|&nbsp; <strong>D</strong> Eric Pfeifer
+  </div>
+
+  <!-- Q22 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">22</div><div class="q-text">It is unpleasant and upsetting for people to be placed in a silent environment against their will.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">C – Tai Dotan Ben-Soussan</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section F (Ben-Soussan) – Bằng chứng</div>
+      <div class="evidence-en">"When people do not want silence, it can be very distressing."</div>
+      <div class="evidence-vi">"Khi mọi người không muốn im lặng, điều đó có thể rất gây đau khổ."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">unpleasant and upsetting (đề)</span><span class="phr-arrow">→</span><span class="phr-para">very distressing (bài)</span></div>
+      <div class="phr-row"><span class="phr-original">against their will (đề)</span><span class="phr-arrow">→</span><span class="phr-para">do not want silence (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q23 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">23</div><div class="q-text">The trend towards creating quieter urban locations is likely to increase in the coming years.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">A – Nick Antonio</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section C (Antonio) – Bằng chứng</div>
+      <div class="evidence-en">"'People are seeing the benefits of these more quiet environments in their cities,' Antonio says. 'I expect we will see much more of this in the future.'"</div>
+      <div class="evidence-vi">"'Mọi người đang nhận thấy lợi ích của những môi trường yên tĩnh hơn ở thành phố của họ,' Antonio nói. 'Tôi kỳ vọng chúng ta sẽ thấy điều này nhiều hơn trong tương lai.'"</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">likely to increase in the coming years (đề)</span><span class="phr-arrow">→</span><span class="phr-para">expect we will see much more of this in the future (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q24 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">24</div><div class="q-text">When our body's senses are completely deprived of input, our minds compensate for this by creating the illusion of images and sounds.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">B – Justin Feinstein</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section D (Feinstein) – Bằng chứng</div>
+      <div class="evidence-en">"When you don't have external sensory stimuli coming in, the brain tries to fill the void to make sense of this dark and silent world... some people can even hear the sound of their eyes blinking."</div>
+      <div class="evidence-vi">"Khi bạn không có các kích thích cảm giác bên ngoài, não cố gắng lấp đầy khoảng trống để hiểu thế giới tối tăm và im lặng này... một số người thậm chí có thể nghe thấy âm thanh của mắt họ đang chớp."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">fill the void</div><div class="vocab-meaning">compensate for an absence</div><div class="vocab-vi">lấp đầy khoảng trống</div></div>
+        <div class="vocab-card"><div class="vocab-word">altered perception</div><div class="vocab-meaning">change in how one experiences reality</div><div class="vocab-vi">nhận thức/cảm giác bị thay đổi</div></div>
+        <div class="vocab-card"><div class="vocab-word">benign</div><div class="vocab-meaning">not harmful</div><div class="vocab-vi">lành tính, không gây hại</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q25 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">25</div><div class="q-text">Even a short amount of silent time can have a positive impact.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">D – Eric Pfeifer</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section G (Pfeifer) – Bằng chứng</div>
+      <div class="evidence-en">"'You don't need to spend hours in silence,' he says. 'It is likely better to have more frequency of silence for a few minutes at a time... Just finding those places in your daily life where you can find some silence... can make a big difference.'"</div>
+      <div class="evidence-vi">"'Bạn không cần phải dành nhiều giờ trong sự im lặng,' ông nói. 'Tốt hơn là có sự im lặng thường xuyên hơn, mỗi lần vài phút... Chỉ cần tìm những khoảnh khắc im lặng trong cuộc sống hàng ngày... có thể tạo ra sự khác biệt lớn.'"</div>
+    </div>
+  </div>
+
+  <!-- Q26 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">26</div><div class="q-text">External and internal quietness makes us more conscious of events occurring in our surroundings and helps us react appropriately.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">C – Tai Dotan Ben-Soussan</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Section F (Ben-Soussan) – Bằng chứng</div>
+      <div class="evidence-en">"When we find ways to be quiet, we are not only quiet in our environment, but quiet in our inner selves. This allows us to be more aware of what is happening around us and what the situation may require from us so we can provide a more adequate response."</div>
+      <div class="evidence-vi">"Khi chúng ta tìm cách để yên tĩnh, chúng ta không chỉ yên tĩnh trong môi trường xung quanh mà còn yên tĩnh trong nội tâm. Điều này cho phép chúng ta nhận thức rõ hơn về những gì đang xảy ra xung quanh và những gì tình huống có thể yêu cầu từ chúng ta để có thể đưa ra phản ứng phù hợp hơn."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">external and internal quietness (đề)</span><span class="phr-arrow">→</span><span class="phr-para">quiet in our environment / quiet in our inner selves (bài)</span></div>
+      <div class="phr-row"><span class="phr-original">more conscious of events / react appropriately (đề)</span><span class="phr-arrow">→</span><span class="phr-para">more aware of what is happening / provide adequate response (bài)</span></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════
+     PASSAGE 3
+════════════════════════════════════════ -->
+<section id="passage3">
+  <div class="passage-header">
+    <span class="passage-label">Passage 3 · Q27–40</span>
+    <span class="passage-title">The World of Sugar – Book Review</span>
+  </div>
+  <div class="summary-box">
+    <strong>Chủ đề:</strong> Điểm sách "The World of Sugar" của Ulbe Bosma — lịch sử toàn cầu về ngành đường (mía và củ cải đường), từ sản xuất, lao động, quyền lực chính trị đến tác hại sức khỏe.
+  </div>
+
+  <div class="q-type-label">Questions 27–30 · Multiple Choice (A, B, C, D)</div>
+
+  <!-- Q27 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">27</div><div class="q-text">What does the reviewer suggest about the cultivation and trading of sugar in the first paragraph?</div></div>
+    <div class="answer-row"><span class="ans-badge letter">B – Beet sugar has been made more internationally competitive.</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 1 – Bằng chứng</div>
+      <div class="evidence-en">"Beet sugar... has also been massively subsidised and sold at artificially low prices on world markets, threatening the livelihood of producers of cane sugar."</div>
+      <div class="evidence-vi">"Đường củ cải... cũng được trợ giá ồ ạt và bán với giá thấp giả tạo trên thị trường thế giới, đe dọa sinh kế của các nhà sản xuất đường mía."</div>
+    </div>
+    <div class="options-box">
+      <strong>B ✓:</strong> trợ giá → giá thấp giả tạo → cạnh tranh hơn trên thị trường quốc tế<br>
+      <span style="color:var(--muted)">A ✗: vai trò trong quan hệ quốc tế — không đề cập | C ✗: chất lượng đường mía vượt trội — không có | D ✗: địa điểm trồng mới — không có</span>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">subsidised</div><div class="vocab-meaning">supported financially by the government</div><div class="vocab-vi">được trợ giá nhà nước</div></div>
+        <div class="vocab-card"><div class="vocab-word">artificially low prices</div><div class="vocab-meaning">prices kept below natural market level</div><div class="vocab-vi">giá thấp không phản ánh thực tế thị trường</div></div>
+        <div class="vocab-card"><div class="vocab-word">livelihood</div><div class="vocab-meaning">means of earning a living</div><div class="vocab-vi">sinh kế, nguồn sống</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q28 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">28</div><div class="q-text">In the second paragraph, when discussing the sugar market in Britain, the reviewer stresses...</div></div>
+    <div class="answer-row"><span class="ans-badge letter">A – how the sources used changed over time.</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 2 – Bằng chứng (cả đoạn)</div>
+      <div class="evidence-en">"The sweet-toothed British first bought cane sugar from their own slavery-dependent colonial plantations. Following the abolition of slavery... cane sugar was imported from places which retained the practice, such as Cuba and Brazil. Towards the end of the 19th century, the British started to import beet sugar from continental Europe. Only in the 20th century was there a move to develop a national beet sugar industry."</div>
+      <div class="evidence-vi">"Người Anh vốn thích ngọt ban đầu mua đường mía từ các đồn điền thuộc địa phụ thuộc vào chế độ nô lệ của họ. Sau khi bãi bỏ chế độ nô lệ... đường mía được nhập khẩu từ những nơi vẫn còn duy trì chế độ đó như Cuba và Brazil. Cuối thế kỷ 19, người Anh bắt đầu nhập khẩu đường củ cải từ lục địa châu Âu. Chỉ đến thế kỷ 20 mới có sự chuyển hướng để phát triển ngành công nghiệp đường củ cải trong nước."</div>
+      <div class="evidence-note">💡 Trọng tâm toàn đoạn là <strong>nguồn cung đường thay đổi qua các giai đoạn</strong>: thuộc địa → Cuba/Brazil → châu Âu → trong nước.</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">abolition of slavery</div><div class="vocab-meaning">the ending of slavery as a legal practice</div><div class="vocab-vi">bãi bỏ chế độ nô lệ</div></div>
+        <div class="vocab-card"><div class="vocab-word">colonial plantations</div><div class="vocab-meaning">large farms in colonies using forced labour</div><div class="vocab-vi">đồn điền thuộc địa</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q29 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">29</div><div class="q-text">What is the reviewer doing in the third paragraph?</div></div>
+    <div class="answer-row"><span class="ans-badge letter">C – addressing a misconception about the growing of sugar cane.</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 3 – Bằng chứng</div>
+      <div class="evidence-en">"Contrary to popular belief, cane sugar production was never just restricted to large, dedicated plantations owned by rich men. For example, in Java... sugar cane was grown together with rice in an extraordinarily labour-intensive way by small farmers."</div>
+      <div class="evidence-vi">"Trái với quan niệm phổ biến, sản xuất đường mía không bao giờ chỉ giới hạn ở các đồn điền lớn chuyên biệt của những người đàn ông giàu có. Ví dụ, ở Java... mía được trồng cùng với lúa theo cách sử dụng lao động cực kỳ cao bởi những nông dân nhỏ lẻ."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">addressing a misconception (đề)</span><span class="phr-arrow">→</span><span class="phr-para">Contrary to popular belief (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q30 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">30</div><div class="q-text">In the final paragraph, what does the reviewer suggest is the overall message of Bosma's book?</div></div>
+    <div class="answer-row"><span class="ans-badge letter">A – Sugar is a harmful and unnecessary product.</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn cuối – Bằng chứng</div>
+      <div class="evidence-en">"He shows that we could always have done without sugar and that today we have many alternative sources of sweetness."</div>
+      <div class="evidence-vi">"Ông cho thấy rằng chúng ta luôn có thể sống mà không cần đường và ngày nay chúng ta có nhiều nguồn thay thế để tạo vị ngọt."</div>
+    </div>
+    <div class="options-box">
+      <strong>A ✓:</strong> "could always have done without sugar" = không cần thiết; + tác hại đề cập ở các đoạn trước (sâu răng, béo phì)<br>
+      <span style="color:var(--muted)">B ✗: áp lực kinh tế để kiểm soát — không phải thông điệp chính | C ✗: điều kiện lao động — không phải trọng tâm đoạn cuối | D ✗: hậu quả của quảng cáo — không khớp</span>
+    </div>
+  </div>
+
+  <!-- Q31-36 -->
+  <div class="q-type-label">Questions 31–36 · Summary Completion (Word Bank A–I)</div>
+  <div style="background:var(--bg);border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:0.8rem;color:var(--muted);">
+    A National govts · B Agricultural developments · C Less wealthy nations · D Untrained workers · E Small-scale cultivation · F Outdated methods · G Financial controls · H Migrant workers · I Powerful individuals and businesses
+  </div>
+
+  <!-- Q31 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">31</div><div class="q-text">In big industries in Germany and the US, sugar farming depended on ..........</div></div>
+    <div class="answer-row"><span class="ans-badge letter">H – Migrant workers</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 4 – Bằng chứng</div>
+      <div class="evidence-en">"imported labour has been used for much large-scale production. German beet fields employed Polish workers; Mexicans and many others, including Sicilians, were vital to US sugar production."</div>
+      <div class="evidence-vi">"lao động nhập khẩu đã được sử dụng cho phần lớn sản xuất quy mô lớn. Các cánh đồng củ cải đường của Đức sử dụng lao động người Ba Lan; người Mexico và nhiều người khác, bao gồm cả người Sicily, là nhân lực thiết yếu cho ngành sản xuất đường của Mỹ."</div>
+      <div class="evidence-note">💡 Polish, Mexican, Sicilian = những lao động đến từ nơi khác = <strong>migrant workers</strong> (lao động nhập cư).</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">migrant workers</div><div class="vocab-meaning">workers who move to find employment</div><div class="vocab-vi">lao động nhập cư</div></div>
+        <div class="vocab-card"><div class="vocab-word">imported labour</div><div class="vocab-meaning">workforce brought from other regions/countries</div><div class="vocab-vi">lao động từ nơi khác đến</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q32 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">32</div><div class="q-text">In South Asia and Latin America, .......... continued.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">E – Small-scale cultivation</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 4 – Bằng chứng</div>
+      <div class="evidence-en">"the book is about the continuity of the use of traditional methods on small farms. In the mid 20th-century, this type of sugar production dominated in South Asia and Latin America."</div>
+      <div class="evidence-vi">"cuốn sách nói về sự tiếp nối trong việc sử dụng các phương pháp truyền thống trên các trang trại nhỏ. Vào giữa thế kỷ 20, loại sản xuất đường này chiếm ưu thế ở Nam Á và Mỹ Latinh."</div>
+    </div>
+  </div>
+
+  <!-- Q33 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">33</div><div class="q-text">Sugar production also involved .......... who were eager to protect their markets.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">I – Powerful individuals and businesses</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng</div>
+      <div class="evidence-en">"This is also a history of capitalists and sugar dynasties, as well as corporations that in some cases have remained influential over very long periods. Great firms and great interests have had profound influence on the policies of states."</div>
+      <div class="evidence-vi">"Đây cũng là lịch sử của các nhà tư bản và các gia tộc đường, cũng như các tập đoàn mà trong một số trường hợp đã duy trì ảnh hưởng trong thời gian rất dài. Các công ty lớn và các thế lực lớn đã có ảnh hưởng sâu sắc đến chính sách của các quốc gia."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">sugar dynasties</div><div class="vocab-meaning">powerful families dominating the sugar industry</div><div class="vocab-vi">các gia tộc quyền lực trong ngành đường</div></div>
+        <div class="vocab-card"><div class="vocab-word">sugar bourgeoisie</div><div class="vocab-meaning">wealthy class in the sugar business</div><div class="vocab-vi">tầng lớp tư sản ngành đường</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Q34 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">34</div><div class="q-text">In countries such as Cuba the sugar industry had a major influence on ..........</div></div>
+    <div class="answer-row"><span class="ans-badge letter">A – National governments</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng</div>
+      <div class="evidence-en">"In many places — not just the British Caribbean but Cuba and the Philippines too — a powerful sugar bourgeoisie played a major role in politics and their interests were consequently protected by trade barriers and subsidies."</div>
+      <div class="evidence-vi">"Ở nhiều nơi — không chỉ vùng Caribe thuộc Anh mà còn cả Cuba và Philippines — một tầng lớp tư sản đường mía quyền lực đóng vai trò lớn trong chính trị và lợi ích của họ do đó được bảo vệ bởi các rào cản thương mại và trợ giá."</div>
+    </div>
+  </div>
+
+  <!-- Q35 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">35</div><div class="q-text">To support the interests of sugar producers, .......... were established.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">G – Financial controls</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng</div>
+      <div class="evidence-en">"their interests were consequently protected by trade barriers and subsidies."</div>
+      <div class="evidence-vi">"lợi ích của họ do đó được bảo vệ bởi các rào cản thương mại và trợ giá."</div>
+      <div class="evidence-note">💡 trade barriers + subsidies = các công cụ kiểm soát tài chính/thương mại = <strong>financial controls</strong>.</div>
+    </div>
+  </div>
+
+  <!-- Q36 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">36</div><div class="q-text">As a result of this, .......... were penalised.</div></div>
+    <div class="answer-row"><span class="ans-badge letter">C – Less wealthy nations</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 5 – Bằng chứng</div>
+      <div class="evidence-en">"In the battle for control of the industry, it was inevitably the poor countries which came off worse."</div>
+      <div class="evidence-vi">"Trong cuộc chiến kiểm soát ngành công nghiệp, chính là các nước nghèo chịu thiệt thòi hơn."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">penalised (đề)</span><span class="phr-arrow">→</span><span class="phr-para">came off worse (bài)</span></div>
+      <div class="phr-row"><span class="phr-original">less wealthy nations (đề)</span><span class="phr-arrow">→</span><span class="phr-para">poor countries (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q37-40 -->
+  <div class="q-type-label">Questions 37–40 · Yes / No / Not Given</div>
+
+  <!-- Q37 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">37</div><div class="q-text">Sugar has now become available in large quantities due to a range of agricultural developments.</div></div>
+    <div class="answer-row"><span class="ans-badge yn-yes">✓ YES</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 7 – Bằng chứng</div>
+      <div class="evidence-en">"new techniques, varieties, fertilisers, irrigation systems and much more have turned gleaming white sugar into a ubiquitous chemical. Over the same time, there has been a massive increase in consumption."</div>
+      <div class="evidence-vi">"các kỹ thuật mới, giống mới, phân bón, hệ thống tưới tiêu và nhiều thứ khác đã biến đường trắng tinh khiết thành một hóa chất có mặt khắp nơi. Trong cùng khoảng thời gian đó, mức tiêu thụ đã tăng lên đáng kể."</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">ubiquitous</div><div class="vocab-meaning">present / found everywhere</div><div class="vocab-vi">có mặt khắp nơi, phổ biến rộng rãi</div></div>
+        <div class="vocab-card"><div class="vocab-word">irrigation systems</div><div class="vocab-meaning">systems for supplying water to farmland</div><div class="vocab-vi">hệ thống tưới tiêu</div></div>
+        <div class="vocab-card"><div class="vocab-word">fertilisers</div><div class="vocab-meaning">chemicals that help plants grow</div><div class="vocab-vi">phân bón</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">available in large quantities (đề)</span><span class="phr-arrow">→</span><span class="phr-para">ubiquitous / massive increase in consumption (bài)</span></div>
+      <div class="phr-row"><span class="phr-original">agricultural developments (đề)</span><span class="phr-arrow">→</span><span class="phr-para">new techniques, varieties, fertilisers, irrigation systems (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q38 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">38</div><div class="q-text">Advertisers initially marketed sugar as a luxury product.</div></div>
+    <div class="answer-row"><span class="ans-badge notgiven">? NOT GIVEN</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 7 – Thông tin bài có</div>
+      <div class="evidence-en">"Once regarded as a luxury, sugar came to be promoted as a valuable source of energy."</div>
+      <div class="evidence-vi">"Từng được coi là hàng xa xỉ, đường dần được quảng bá là nguồn năng lượng có giá trị."</div>
+      <div class="evidence-note">⚠️ Bài nói đường "được coi là xa xỉ" nhưng <strong>không đề cập vai trò của quảng cáo (advertisers)</strong> trong giai đoạn đó — không đủ thông tin.</div>
+    </div>
+  </div>
+
+  <!-- Q39 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">39</div><div class="q-text">The invention of high-fructose corn syrup was a positive development.</div></div>
+    <div class="answer-row"><span class="ans-badge yn-no">✗ NO</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 7 – Bằng chứng (mâu thuẫn)</div>
+      <div class="evidence-en">"the recent past has seen worrying new developments in mass sweetening. High-fructose corn syrup made from maize using an enzymatic process... is now widely consumed... and is regarded as a leading cause of obesity."</div>
+      <div class="evidence-vi">"trong quá khứ gần đây đã xuất hiện những diễn biến đáng lo ngại trong việc làm ngọt hàng loạt. Xi-rô ngô fructose cao được làm từ ngô bằng quy trình enzyme... hiện được tiêu thụ rộng rãi... và được coi là một nguyên nhân hàng đầu gây béo phì."</div>
+      <div class="evidence-note">⚠️ "worrying" (đáng lo ngại) mâu thuẫn trực tiếp với "positive" (tích cực) trong câu hỏi → đáp án NO.</div>
+    </div>
+    <div class="vocab-section"><h4>Từ vựng</h4>
+      <div class="vocab-grid">
+        <div class="vocab-card"><div class="vocab-word">high-fructose corn syrup</div><div class="vocab-meaning">cheap sweetener made from corn starch</div><div class="vocab-vi">xi-rô ngô giàu fructose</div></div>
+        <div class="vocab-card"><div class="vocab-word">enzymatic process</div><div class="vocab-meaning">a process using biological enzymes</div><div class="vocab-vi">quy trình enzyme sinh học</div></div>
+        <div class="vocab-card"><div class="vocab-word">obesity</div><div class="vocab-meaning">condition of being severely overweight</div><div class="vocab-vi">béo phì</div></div>
+      </div>
+    </div>
+    <div class="paraphrase-box"><strong>Bẫy paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">positive development (đề)</span><span class="phr-arrow">↔ trái nghĩa</span><span class="phr-para">worrying new developments / leading cause of obesity (bài)</span></div>
+    </div>
+  </div>
+
+  <!-- Q40 -->
+  <div class="q-block">
+    <div class="q-header"><div class="q-num">40</div><div class="q-text">High-fructose corn syrup is an ingredient in many processed foods.</div></div>
+    <div class="answer-row"><span class="ans-badge yn-yes">✓ YES</span></div>
+    <div class="evidence-box">
+      <div class="evidence-label">📍 Đoạn 7 – Bằng chứng</div>
+      <div class="evidence-en">"It is now widely consumed, having been adopted in the making of soft drinks and a large number of processed foods."</div>
+      <div class="evidence-vi">"Nó hiện được tiêu thụ rộng rãi, sau khi được đưa vào sản xuất đồ uống có gas và nhiều loại thực phẩm chế biến sẵn."</div>
+    </div>
+    <div class="paraphrase-box"><strong>Paraphrase</strong>
+      <div class="phr-row"><span class="phr-original">ingredient in many processed foods (đề)</span><span class="phr-arrow">→</span><span class="phr-para">adopted in the making of a large number of processed foods (bài)</span></div>
+    </div>
+  </div>
+
+  <div class="score-note">
+    <h3>Band Score Reference · Reading Test 1</h3>
+    <div class="score-grid">
+      <div class="score-cell"><div class="range">0–18</div><div class="label">Cần ôn tập nhiều trước khi thi</div></div>
+      <div class="score-cell"><div class="range">19–27</div><div class="label">Có thể đạt điểm chấp nhận được</div></div>
+      <div class="score-cell"><div class="range">28–40</div><div class="label">Có khả năng đạt điểm tốt</div></div>
+    </div>
+  </div>
+
+</section>
+</main>
+
+<script>
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+    navLinks.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + current); });
+  });
+</script>
+</body>
+</html>
